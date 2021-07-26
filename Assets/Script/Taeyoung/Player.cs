@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    rigidbody.AddForce(Vector2.up * jumpSpeed);
+                    rigidbody.velocity = (Vector2.up * jumpSpeed);
                     animator.Play("Jump2");
                     jumpCount--;
                     if (jumpCount == 1)
