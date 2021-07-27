@@ -43,4 +43,9 @@ public class GameManager : MonoBehaviour
         pausePanel.SetActive(false);
         SceneManager.LoadScene("StartScene");
     }
+
+    public void NEXT()
+    {
+        SceneManager.LoadScene("Stage21");
+    }
 }
