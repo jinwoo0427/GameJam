@@ -7,6 +7,11 @@ TagManager:
   - Ground
   - Object
   - Bullet
+  - Attack
+  - Enemy
+  - Fire
+  - Water
+  - Wind
   layers:
   - Default
   - TransparentFX
