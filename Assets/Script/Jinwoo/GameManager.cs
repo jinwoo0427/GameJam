@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour
         pausePanel.SetActive(false);
         SceneManager.LoadScene("StartScene");
     }
+
+
+    public void NEXT()
+    {
+        SceneManager.LoadScene("Stage21");
+    }
+
     //public void EndingAction()
     //{
     //    Time.timeScale = 0;
@@ -56,4 +63,5 @@ public class GameManager : MonoBehaviour
     //    SceneManager.LoadScene("EndingScene");
 
     //}
+
 }
