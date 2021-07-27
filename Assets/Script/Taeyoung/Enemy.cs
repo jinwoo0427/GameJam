@@ -24,6 +24,13 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Shoot());
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Attack")
+        {
+            Destroy(gameObject);
+        }
+    }
     IEnumerator Shoot()
     {
         while (true)

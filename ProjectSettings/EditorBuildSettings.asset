@@ -4,18 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/Son seong bin.unity
-=======
-    path: Assets/Scenes/jinwooScen.unity
->>>>>>> e093ceb5333b9fe6141643d773727873aa4a3055
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: ee8d3be41ba66964d8a825598ba0812c
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: a1576f06509694349b8870f611a96f56
+  m_Scenes: []
   m_configObjects: {}
