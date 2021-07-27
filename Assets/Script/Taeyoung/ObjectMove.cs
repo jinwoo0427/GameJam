@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
 {
-    private float speed = 0.2f;
-    void Update()
-    {
-
-    }
+    private float speed = 0.3f;
     private void FixedUpdate()
     {
         transform.Translate(Vector2.left * speed);
