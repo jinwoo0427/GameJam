@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -146,6 +147,27 @@ public class Player : MonoBehaviour
             StartCoroutine(Hit());
             UpdateUi();
         }
+        if(collision.transform.tag == "BossAttack" || collision.transform.tag == "BossAttackWave" && isGod == false)
+        {
+            if (isShiled == true)
+            {
+                shiled.SetActive(false);
+                isShiled = false;
+                return;
+            }
+            if (isShiled == true)
+            {
+                shiled.SetActive(false);
+                isShiled = false;
+                return;
+            }
+            if (isHit == true)
+                return;
+            audio[2].Play();
+            hp -= collision.GetComponent<Damage>().damage;
+            StartCoroutine(Hit());
+            UpdateUi();
+        }
     }
     private void Update()
     {
@@ -205,6 +227,7 @@ public class Player : MonoBehaviour
             animator.Play("Dead");
             rigidbody.velocity = (Vector2.up * jumpSpeed);
             collider.enabled = false;
+            SceneManager.LoadScene("GameOver");
         }
         if(stack.w < 2)
         {
@@ -336,7 +359,6 @@ public class Player : MonoBehaviour
         PowerShow();
         isClear = false;
         isSkill = false;
-
     }
     void UpdateUi()
     {
@@ -372,5 +394,12 @@ public class Player : MonoBehaviour
         }
         powerObj[Point] = Instantiate(power[Power],powerPoint[Point].position,Quaternion.identity);
         powerObj[Point].transform.SetParent(transform);
+    }
+    public void GetDamage(int Damage)
+    {
+        hp -= Damage;
+        audio[2].Play();
+        StartCoroutine(Hit());
+        UpdateUi();
     }
 }

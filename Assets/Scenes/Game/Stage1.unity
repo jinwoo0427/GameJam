@@ -4485,9 +4485,9 @@ MonoBehaviour:
   - {fileID: 720682857}
   - {fileID: 720682858}
   power:
-  - {fileID: 7430004411047634161, guid: 105cd0a68a19a5f47839748c6e5eb154, type: 3}
-  - {fileID: 3442091306880825122, guid: d3f65395d6234324686f676df8983db8, type: 3}
-  - {fileID: 8001355368774936572, guid: b9ae246956d1ec349b23b975d4e472b6, type: 3}
+  - {fileID: 7430004411047634161, guid: d4089c35dd8bd784d80e83e89befc44f, type: 3}
+  - {fileID: 3442091306880825122, guid: 49ce9b10837e3cd4981336e0f6d0fccd, type: 3}
+  - {fileID: 8001355368774936572, guid: bdbb9b7d2b144a1469e9732c0de1dbd5, type: 3}
   powerPoint:
   - {fileID: 540273679}
   - {fileID: 1283784842}
@@ -7238,7 +7238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1266963962
 MonoBehaviour:
   m_ObjectHideFlags: 0

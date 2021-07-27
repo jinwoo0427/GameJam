@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+
     public GameObject pausePanel;
-    private bool escbutton = false;
+    //public GameObject panel;
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         {
             PauseAction();
         }
+        
     }
     public void PauseAction()
     {
@@ -44,8 +46,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("StartScene");
     }
 
+
     public void NEXT()
     {
         SceneManager.LoadScene("Stage21");
     }
+
+    //public void EndingAction()
+    //{
+    //    Time.timeScale = 0;
+    //    panel.SetActive(true);
+    //    Invoke("Ending", 2f);
+    //}
+    //public void Ending()
+    //{
+    //    SceneManager.LoadScene("EndingScene");
+
+    //}
+
 }

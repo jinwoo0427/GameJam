@@ -12,6 +12,8 @@ TagManager:
   - Fire
   - Water
   - Wind
+  - BossAttack
+  - BossAttackWave
   layers:
   - Default
   - TransparentFX
