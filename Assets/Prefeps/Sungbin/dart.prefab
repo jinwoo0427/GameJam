@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3502101036835984855}
   m_Layer: 0
   m_Name: dart
-  m_TagString: Object
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
 
 
     public GameObject pausePanel;
+    //public GameObject panel;
     void Start()
     {
+
     }
 
     void Update()
@@ -31,11 +33,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
-    public void RestartAction()
+    public void RestartAction(int Scenenum)
     {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
-        SceneManager.LoadScene("jinwooScen");  
+        SceneManager.LoadScene(Scenenum);  
     }
     public void MainMenuAction()
     {
@@ -43,5 +45,15 @@ public class GameManager : MonoBehaviour
         pausePanel.SetActive(false);
         SceneManager.LoadScene("StartScene");
     }
+    //public void EndingAction()
+    //{
+    //    Time.timeScale = 0;
+    //    panel.SetActive(true);
+    //    Invoke("Ending", 2f);
+    //}
+    //public void Ending()
+    //{
+    //    SceneManager.LoadScene("EndingScene");
 
+    //}
 }

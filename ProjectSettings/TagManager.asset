@@ -7,6 +7,13 @@ TagManager:
   - Ground
   - Object
   - Bullet
+  - Attack
+  - Enemy
+  - Fire
+  - Water
+  - Wind
+  - BossAttack
+  - BossAttackWave
   layers:
   - Default
   - TransparentFX

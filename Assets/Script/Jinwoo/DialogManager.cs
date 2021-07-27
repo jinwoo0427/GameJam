@@ -38,9 +38,7 @@ public class DialogManager : MonoBehaviour
         if (clicknum == 3)
         {
             talk.SetMsg("그 사실을 안 주인공 쿠로는 검은 세력이 \n세상을 지배하는것을 막고자 직접 도법서를 \n되찾으러 가는데...");
-
         }
-        
         if (clicknum == 4)
         {
             SceneManager.LoadScene("Stage1");

@@ -6,7 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     public void GoGameScene()
     {
-        SceneManager.LoadScene("jinwooScen");
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()
