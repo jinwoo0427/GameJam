@@ -31,6 +31,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
+    public void RestartAction()
+    {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+        SceneManager.LoadScene("jinwooScen");  
+    }
     public void MainMenuAction()
     {
         Time.timeScale = 1;
