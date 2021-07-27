@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     private bool isCrouch;
     private bool isJump;
+
+
     private Collider2D collider;
     private bool isDead;
     private Vector4 stack;
@@ -67,6 +69,7 @@ public class Player : MonoBehaviour
     private bool isSkill;
     [SerializeField]
     private Text[] amountTxt;
+
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -88,6 +91,8 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+
         if (collision.transform.tag == "Fire")
         {
             Destroy(collision.gameObject);
@@ -101,6 +106,7 @@ public class Player : MonoBehaviour
             UpdateUi();
         }
         if (collision.transform.tag == "Wind")
+
         {
             Destroy(collision.gameObject);
             Tool.z++;
@@ -121,7 +127,11 @@ public class Player : MonoBehaviour
             StartCoroutine(Hit());
             UpdateUi();
         }
+
+        
+
         if(collision.transform.tag == "Bullet" && isGod == false)
+
         {
             if (isHit == true)
                 return;
@@ -165,7 +175,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if(transform.position.y > 3)
+        if (transform.position.y > 3)
         {
             transform.position = new Vector2(-6, 3);
         }
@@ -258,6 +268,9 @@ public class Player : MonoBehaviour
         attackAnimator.Play("Attack");
         yield return new WaitForSeconds(0.65f);
         attackField.SetActive(false);
+
+        isAttack = false;
+
         yield return new WaitForSeconds(2f);
         isAttack = false;
     }
@@ -323,6 +336,7 @@ public class Player : MonoBehaviour
         PowerShow();
         isClear = false;
         isSkill = false;
+
     }
     void UpdateUi()
     {
