@@ -4,56 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Game/StartScene.unity
-    guid: ee8d3be41ba66964d8a825598ba0812c
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/Game/Story.unity
-    guid: 350af2554c30370469003ccbdd93452d
-  - enabled: 1
-    path: Assets/Scenes/Game/Stage2.unity
-    guid: ece108ac5460f494ab13c0bc99e8c5be
-  - enabled: 1
-    path: Assets/Scenes/Game/Stage3.unity
-    guid: 77902aa8c3573ea4aab6e0d52b07699c
-  - enabled: 1
-    path: Assets/Scenes/Game/Stage1.unity
-    guid: 3bee2cda8d5f9274daaa4cf517c60371
-  - enabled: 1
-    path: Assets/Scenes/Game/EndingStory.unity
-    guid: dbcb66b10eaf0324ca2fd3bbe84dd158
-  - enabled: 1
-=======
-    path: Assets/Scenes/Game/Stage1.unity
-    guid: 3bee2cda8d5f9274daaa4cf517c60371
-  - enabled: 1
->>>>>>> 3445aa3aff644e3b9842905eefdc0fb4e72c42a8
-    path: Assets/Scenes/Game/EndScene.unity
-    guid: 4441fd75bcfdbb6479a032562d509d2e
-  - enabled: 1
-    path: Assets/Scenes/Game/GameOver.unity
-    guid: a1576f06509694349b8870f611a96f56
-<<<<<<< HEAD
-=======
-  - enabled: 1
-    path: Assets/Scenes/jinwooScen.unity
-    guid: 69637e871003dc342b7189af86215857
-  - enabled: 1
-    path: Assets/Scenes/Son seong bin.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/SampleScene 1.unity
-    guid: 543bf1d04cad42f409bbe321c847b0ce
-  - enabled: 1
-    path: Assets/Scenes/Taeyoung.unity
-    guid: aa6781b38342be74b8cffe9ceea29786
-  - enabled: 1
-    path: Assets/Scenes/Game/Stage21.unity
-    guid: f02696686289a2a4cbdbe04edc0cd993
-  - enabled: 1
-    path: Assets/Scenes/Game/Stage11.unity
-    guid: ace1fb0667bd93a438251c4b64d85d78
->>>>>>> 3445aa3aff644e3b9842905eefdc0fb4e72c42a8
+  m_Scenes: []
   m_configObjects: {}
