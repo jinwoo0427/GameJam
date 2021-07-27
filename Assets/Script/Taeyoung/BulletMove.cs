@@ -8,7 +8,10 @@ public class BulletMove : MonoBehaviour
     private float speed;
     void Update()
     {
-        
+        if (transform.position.x < -10)
+        {
+            Destroy(gameObject);
+        }
     }
     private void FixedUpdate()
     {

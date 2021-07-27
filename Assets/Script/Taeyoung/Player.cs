@@ -18,13 +18,13 @@ public class Player : MonoBehaviour
     private GameObject attackField;
     private bool isAttack;
     private Animator animator;
-
+    private bool isCrouch;
+    private bool isJump;
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         jumpCount = 0;
-
         hp = basicHp;
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,12 +38,12 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Object")
+        if (collision.transform.tag == "Object")
         {
             hp--;
             UpdateUi();
         }
-        if(collision.transform.tag == "Bullet")
+        if (collision.transform.tag == "Bullet")
         {
             hp--;
             Destroy(collision.gameObject);
@@ -56,9 +56,9 @@ public class Player : MonoBehaviour
         {
             if (jumpCount > 0)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && isCrouch == false)
                 {
-                    rigidbody.AddForce(Vector2.up * jumpSpeed);
+                    rigidbody.velocity = (Vector2.up * jumpSpeed);
                     animator.Play("Jump2");
                     jumpCount--;
                     if (jumpCount == 1)
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if(transform.position.y > 3)
+        if (transform.position.y > 3)
         {
             transform.position = new Vector2(-6, 3);
         }
@@ -74,8 +74,15 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Attack());
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
+            isCrouch = true;
+            animator.Play("Slide");
+            transform.localScale = new Vector2(1, .5f);
+        }
+        else
+        {
+            isCrouch = false;
             transform.localScale = new Vector2(1, 1);
         }
     }
@@ -85,7 +92,7 @@ public class Player : MonoBehaviour
         attackField.SetActive(true);
         yield return new WaitForSeconds(1f);
         attackField.SetActive(false);
-        isAttack = false;   
+        isAttack = false;
     }
     void UpdateUi()
     {
