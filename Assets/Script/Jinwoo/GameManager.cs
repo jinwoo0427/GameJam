@@ -7,11 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+
     public GameObject pausePanel;
-    private bool escbutton = false;
     void Start()
     {
-        
     }
 
     void Update()
@@ -20,6 +19,7 @@ public class GameManager : MonoBehaviour
         {
             PauseAction();
         }
+        
     }
     public void PauseAction()
     {
@@ -43,4 +43,5 @@ public class GameManager : MonoBehaviour
         pausePanel.SetActive(false);
         SceneManager.LoadScene("StartScene");
     }
+
 }
