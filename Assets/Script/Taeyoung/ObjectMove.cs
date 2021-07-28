@@ -8,5 +8,11 @@ public class ObjectMove : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(Vector2.left * speed);
+        if (transform.position.x < -10)
+            Destroy(gameObject);
+    }
+    public void FixSpeed(float Speed)
+    {
+        speed = Speed;
     }
 }

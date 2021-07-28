@@ -11,7 +11,7 @@ public class MetehoEnemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.Translate(new Vector2(-1,-1) * 10 * Time.deltaTime);
+        transform.Translate(new Vector2(-1.5f,-1.5f) * 10 * Time.deltaTime);
         if(transform.position.y < -10)
         {
             Destroy(gameObject);

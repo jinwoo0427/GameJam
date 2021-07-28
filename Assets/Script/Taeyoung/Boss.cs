@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Boss : MonoBehaviour
 {
     [SerializeField]
@@ -13,8 +13,20 @@ public class Boss : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private Transform[] firePos;
+    [SerializeField]
+    private GameObject plag;
+    private bool isSpawn;
+    [SerializeField]
+    private Slider slider;
+    [SerializeField]
+    private float basicHP;
+    [SerializeField]
+    private AudioSource audio;
     void Start()
     {
+        animator = GetComponent<Animator>();
+        hp = basicHP;
+        UpdateUI();
         StartCoroutine(Skill());
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,20 +34,32 @@ public class Boss : MonoBehaviour
         if(collision.transform.tag == "BossAttackWave")
         {
             hp -= collision.GetComponent<Damage>().damage;
+            UpdateUI();
             Destroy(collision.gameObject);
         }
     }
     void Update()
     {
-        
+        if(hp <= 0 && isSpawn == false)
+        {
+            isSpawn = true;
+            plag.SetActive(true);
+            animator.Play("Dead");
+            audio.Play();
+        }
     }
     public void GetDamage(int Damage)
     {
         hp -= Damage;
+        UpdateUI();
+    }
+    void UpdateUI()
+    {
+        slider.value = hp / basicHP;
     }
     IEnumerator Skill()
     {
-        while (true)
+        while (isSpawn == false)
         {
             switch (Random.Range(0, 5))
             {

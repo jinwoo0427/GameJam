@@ -47,11 +47,18 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void NEXT()
+    public void Stage1()
     {
-        SceneManager.LoadScene("Stage21");
+        SceneManager.LoadScene("Stage2");
     }
-
+    public void Stage2()
+    {
+        SceneManager.LoadScene("Stage3");
+    }
+    public void Stage3()
+    {
+        SceneManager.LoadScene("EndingStory");
+    }
     //public void EndingAction()
     //{
     //    Time.timeScale = 0;

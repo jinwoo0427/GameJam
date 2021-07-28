@@ -23,7 +23,7 @@ public class OnStartSC : MonoBehaviour
     {
        
         yield return new WaitForSeconds(60f);
-        gameManager.NEXT();
+        gameManager.Stage1();
     }
 
 }

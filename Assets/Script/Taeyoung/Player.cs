@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject shiled;
     [SerializeField]
+    private GameObject shiled2;
+    [SerializeField]
     private Animator attackAnimator;
     [SerializeField]
     private GameObject attackObj;
@@ -147,7 +149,9 @@ public class Player : MonoBehaviour
             StartCoroutine(Hit());
             UpdateUi();
         }
-        if(collision.transform.tag == "BossAttack" || collision.transform.tag == "BossAttackWave" && isGod == false)
+        if (isGod == true)
+            return;
+        if (collision.transform.tag == "Enemy")
         {
             if (isShiled == true)
             {
@@ -155,6 +159,13 @@ public class Player : MonoBehaviour
                 isShiled = false;
                 return;
             }
+            audio[2].Play();
+            hp--;
+            StartCoroutine(Hit());
+            UpdateUi();
+        }
+        if(collision.transform.tag == "BossAttack" || collision.transform.tag == "BossAttackWave")
+        {
             if (isShiled == true)
             {
                 shiled.SetActive(false);
@@ -316,9 +327,9 @@ public class Player : MonoBehaviour
         {
             audio[3].Play();
             isGod = true;
-            shiled.SetActive(true);
+            shiled2.SetActive(true);
             yield return new WaitForSeconds(5f);
-            shiled.SetActive(false);
+            shiled2.SetActive(false);
             isGod = false;
             Debug.Log("¹°2 ½ºÅ³!");
         }

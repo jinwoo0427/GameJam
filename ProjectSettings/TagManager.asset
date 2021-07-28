@@ -14,6 +14,8 @@ TagManager:
   - Wind
   - BossAttack
   - BossAttackWave
+  - Boss
+  - Plag
   layers:
   - Default
   - TransparentFX

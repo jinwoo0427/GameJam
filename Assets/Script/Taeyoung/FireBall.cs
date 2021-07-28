@@ -16,9 +16,14 @@ public class FireBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.tag == "Plag")
+        {
+            return;
+        }
         if(collision.tag == "Boss")
         {
-            collision.transform.GetComponent<Boss>().GetDamage(1);
+            collision.transform.GetComponent<Boss>().GetDamage(15);
+            return;
         }
         if(collision.transform.tag == "Player" || collision.transform.tag == "Attack" || collision.transform.tag == "Ground")
         {

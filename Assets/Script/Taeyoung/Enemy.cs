@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(bullet, transform.localPosition, Quaternion.identity);
+            Instantiate(bullet, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(rpm);
         }
     }

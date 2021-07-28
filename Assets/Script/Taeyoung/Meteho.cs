@@ -19,6 +19,15 @@ public class Meteho : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.transform.tag == "Plag")
+        {
+            return;
+        }
+        if(collision.tag == "Boss")
+        {
+            collision.transform.GetComponent<Boss>().GetDamage(3);
+            return;
+        }
         if(collision.transform.tag == "Object" || collision.transform.tag == "Enemy")
         {
             Destroy(collision.gameObject);
